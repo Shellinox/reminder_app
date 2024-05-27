@@ -69,16 +69,15 @@ class SetTask extends ChangeNotifier {
         timeOfDay.hour, timeOfDay.minute);
   }
 
-  void setAlarm(DateTime dateTime, String title) async {
+  void setAlarm(DateTime dateTime, String title, int index) async {
     final alarmSettings = AlarmSettings(
-      id: dateTime.day,
-      dateTime: dateTime,
-      assetAudioPath: 'assets/alarm.mp3',
-      notificationTitle: 'Reminder',
-      notificationBody: title,
-      enableNotificationOnKill: true,
-    );
-    Alarm.setNotificationOnAppKillContent(title, title);
+        id: index,
+        dateTime: dateTime,
+        assetAudioPath: 'assets/alarm.mp3',
+        notificationTitle: 'Reminder',
+        notificationBody: title,
+        enableNotificationOnKill: true,
+        androidFullScreenIntent: true);
     await Alarm.set(alarmSettings: alarmSettings);
   }
 }

@@ -1,10 +1,9 @@
-import 'package:alarm/alarm.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:provider/provider.dart';
 import 'package:reminder_app/providers/task_provider.dart';
 import 'package:reminder_app/screens/set_reminder_screen.dart';
-import 'package:reminder_app/widgets/custom_container.dart';
+import 'package:reminder_app/shared_widgets/custom_container.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,7 +16,6 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          Alarm.stop(26);
           Navigator.of(context).push(
             MaterialPageRoute(
               builder: (context) => const SetReminderScreen(),

@@ -8,6 +8,7 @@ import 'package:reminder_app/providers/task_provider.dart';
 import 'package:reminder_app/screens/home_screen.dart';
 
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
   Hive.registerAdapter(TaskAdapter());
   Hive.registerAdapter(TimeOfDayAdapter());

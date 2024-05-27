@@ -1,8 +1,9 @@
+import 'package:alarm/alarm.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:reminder_app/constants.dart';
 import 'package:reminder_app/providers/task_provider.dart';
-import 'package:reminder_app/widgets/custom_dialog.dart';
+import 'package:reminder_app/shared_widgets/custom_dialog.dart';
 
 class CustomContainer extends StatelessWidget {
   final String title;
@@ -88,7 +89,9 @@ class CustomContainer extends StatelessWidget {
                         TextButton(
                           onPressed: () {
                             taskProvider.removeTask(index);
+                            Alarm.stop(index+1);
                             taskProvider.updateData();
+                            
                             Navigator.pop(context);
                           },
                           child: Text(
@@ -97,8 +100,6 @@ class CustomContainer extends StatelessWidget {
                           ),
                         ),
                       ]);
-
-                  taskProvider.updateData();
                 },
                 icon: Icon(
                   icon,

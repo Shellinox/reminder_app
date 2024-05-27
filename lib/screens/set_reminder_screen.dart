@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:reminder_app/constants.dart';
 import 'package:reminder_app/models/data.dart';
 import 'package:reminder_app/providers/task_provider.dart';
-import 'package:reminder_app/widgets/custom_button.dart';
+import 'package:reminder_app/shared_widgets/custom_button.dart';
 
 class SetReminderScreen extends StatefulWidget {
   const SetReminderScreen({super.key});
@@ -150,10 +150,11 @@ class _SetReminderScreenState extends State<SetReminderScreen> {
                           time: selectedTime,
                           day: selectedDay),
                     );
+                    taskProvider.updateData();
                     taskProvider.setAlarm(
                         taskProvider.getDateTime(selectedDay, selectedTime),
-                        selectedActivity);
-                    taskProvider.updateData();
+                        selectedActivity,
+                        taskProvider.tasks.indexOf(taskProvider.tasks.last)+1);
 
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
