@@ -1,16 +1,8 @@
 # reminder_app
 
-A new Flutter project.
+Simple reminder app to schedule reminders. The app will play alarms on set time and the alarm can be stopped by deleting the task.
 
-## Getting Started
+![Screenshot_1716797428](https://github.com/Shellinox/reminder_app/assets/114509764/c80fe0cd-636d-4af3-8db2-266b758fc864)
 
-This project is a starting point for a Flutter application.
+Internship assesment for Parinata Music Services Pvt Ltd Team
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
